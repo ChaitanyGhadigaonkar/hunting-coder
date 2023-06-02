@@ -9,15 +9,11 @@ const contactSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    phone:{
-        type:Number,
-        require:true
-    },
     more:{
         type:String
     },
 })
 
-const Contact = mongoose.model("Contact",contactSchema);
+const Contact = mongoose.models.Contact || mongoose.model("Contact",contactSchema);
 
 export default Contact;

@@ -5,10 +5,10 @@ export default async function handler(req, res) {
 
     if(req.method === "POST"){
 
-        const { name, email, phone, more } = req.body;
+        const { name, email, more } = req.body;
         try {
             await connectDb();
-            const contact = await Contact.create({name, email, phone, more });
+            const contact = await Contact.create({name, email, more });
             
             res.status(200).json({success:true,msg:"Message send successfully"});
         } catch (err) {

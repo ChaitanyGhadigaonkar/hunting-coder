@@ -29,11 +29,11 @@ const page = async() => {
   return (
     <>
       <div className="top flex flex-col items-center justify-center">
-        <Image className='rounded-lg object-contain w-96 h-96' src={HeroImage} alt="Hero Image" />
+        <Image className='rounded-lg object-contain mx-5 w-72 h-72 lg:w-96 lg:h-96 ' src={HeroImage} alt="Hero Image" />
         <h1 className="text-4xl font-semibold ">Hunting Coder</h1>
       </div>
 
-      <div className="latest flex flex-col items-center gap-5 mx-20 my-12">
+      <div className="latest flex flex-col items-center gap-5 mx-5 my-12">
           <h1 className="text-3xl font-medium mb-5">You can read the latest blogs here !!</h1>
           {
             blogs.map((blog)=>{

@@ -9,7 +9,7 @@ import HeroImage from "../../../public/Hero.jpg"
 
 async function getBlogDetails(id) {
   try {
-    const response = await axios.get(`http://localhost:1234/api/blog/${id}`);
+    const response = await axios.get(`https://hunting-coder-gamma.vercel.app/api/blog/${id}`);
     const { blog } = await response.data;
     return blog;
   } catch (err) {
