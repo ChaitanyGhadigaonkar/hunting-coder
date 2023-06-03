@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="Navbar__logo self-start">
                 <Link className="logo flex-1 text-lg font-bold px-2 " href="/">Hunting Coder</Link>
             </div>
-            <div ref={ref} className={`routes flex-1 flex items-center justify-end gap-4 px-5 flex-col transition-transform  duration-300 lg:flex-row lg:translate-x-0 lg:gap-8 ${open ? " ": "translate-x-[500px]"} `}>
+            <div ref={ref} className={`routes flex-1 flex items-center justify-end gap-4 px-5 flex-col transition-transform  duration-300 lg:flex-row lg:translate-x-0 lg:gap-8 ${open ? " ": "translate-x-[600px]"} `}>
                 <Link href={"/"} className='text-base font-semibold lg:text-lg '>Home</Link>
                 <Link href={"/blogs"} className='text-base font-semibold lg:text-lg '>Blogs</Link>
                 <Link href={"/about"} className='text-base font-semibold lg:text-lg '>About us</Link>

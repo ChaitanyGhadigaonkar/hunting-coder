@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
 import Image from "next/image";
 import HeroImage from "../../../public/Hero.jpg"
@@ -9,7 +9,7 @@ import HeroImage from "../../../public/Hero.jpg"
 
 async function getBlogDetails(id) {
   try {
-    const response = await axios.get(`https://hunting-coder-gamma.vercel.app/api/blog/${id}`);
+    const response = await axios.get(`${process.env.BACKEND_URL}/api/blog/${id}`);
     const { blog } = await response.data;
     return blog;
   } catch (err) {
@@ -18,7 +18,6 @@ async function getBlogDetails(id) {
 }
 
 const page = async () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const pathname = usePathname();
 
   const id = pathname.split("/")[2];

@@ -7,15 +7,12 @@ import React, { useState } from "react";
 
 
 
-
-
-
 const page =() => {
   const router = useRouter();
   const [inputValues,setInputValues] = useState({name:"",email:"",message:""})
 
   async function sendData(){
-    const response = await axios.post(`https://hunting-coder-gamma.vercel.app/api/contact`,{
+    const response = await axios.post(`${process.env.BACKEND_URL}/api/contact`,{
         name:inputValues.name,
         email:inputValues.email,
         more:inputValues.message
