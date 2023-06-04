@@ -3,6 +3,7 @@ import HeroImage from "../public/Hero.jpg"
 import Image from 'next/image'
 import LatestBlogs from "./LatestBlogs"
 import axios from 'axios'
+import { toast } from 'react-hot-toast'
 
 
 // TODO: 
@@ -22,12 +23,14 @@ async function getBlogs(){
     
 }
 
+
 const page = async() => {
 
   const blogs = await getBlogs();
 
   return (
     <>
+      
       <div className="top flex flex-col items-center justify-center">
         <Image className='rounded-lg object-contain mx-5 w-72 h-72 lg:w-96 lg:h-96 ' src={HeroImage} alt="Hero Image" />
         <h1 className="text-4xl font-semibold ">Hunting Coder</h1>

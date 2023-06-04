@@ -4,7 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-
+import { Toast, toast } from "react-hot-toast";
 
 
 const page =() => {
@@ -12,7 +12,8 @@ const page =() => {
   const [inputValues,setInputValues] = useState({name:"",email:"",message:""})
 
   async function sendData(){
-    const response = await axios.post(`${process.env.BACKEND_URL}/api/contact`,{
+    try {
+      const response = await axios.post(`${process.env.BACKEND_URL}/api/contact`,{
         name:inputValues.name,
         email:inputValues.email,
         more:inputValues.message
@@ -20,6 +21,11 @@ const page =() => {
     const data = response.data;
     console.log(data)
     return data.success;
+    } catch (err) {
+      toast.error("Something went's wrong")
+      return false
+    }
+
   }
 
   const handleChange =(e)=>{
@@ -31,8 +37,7 @@ const page =() => {
       const success = await sendData();
       if(success){
         router.push("/");
-      }else{
-        console.log("somethings went's wrong")
+        toast.success("Message Successfully sent")
       }
   }
 
